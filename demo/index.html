@@ -1,0 +1,135 @@
+<!doctype html>
+
+<html>
+  <head>
+    <title>E-mails input example</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../dist/emails-input.min.css" />
+    <style>
+      .wrapper {
+        max-width: 600px;
+        margin: 40px auto 60px;
+      }
+
+      h1 {
+        margin: 0 0 24px;
+        font: normal 20px/1.362 'Open Sans', sans-serif;
+      }
+
+      h1:not(:first-child) {
+        margin-top: 40px;
+      }
+
+      button {
+        padding: 8px 16px;
+        font: 14px/24px 'Open Sans', sans-serif;
+        color: #fff;
+        background: #4262ff;
+        border: 0;
+        border-radius: 6px;
+      }
+
+      .form {
+        padding: 32px 50px;
+        background: #fff;
+        box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .form__input {
+        margin: -32px -50px 24px;
+        padding: 32px 50px 24px;
+        background-color: #f8f8f7;
+      }
+
+      .actions {
+        font-size: 0;
+      }
+
+      .actions button {
+        display: inline-block;
+      }
+
+      .actions button:not(:last-child) {
+        margin-right: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>Simple form</h1>
+      <div class="form">
+        <div class="form__input">
+          <h1>Share <b>Awesome design</b> with others</h1>
+          <div id="emails-input"></div>
+        </div>
+
+        <div class="actions">
+          <button onclick="emailsInput.addEmails(getRandomEmail())">Add email</button>
+          <button onclick="alert('Valid emails: ' + emailsInput.getCount())">Get emails count</button>
+        </div>
+      </div>
+
+      <h1>Form with prefilled emails</h1>
+      <div class="form">
+        <div class="form__input">
+          <h1>Share <b>Untitled-1</b> with others</h1>
+          <div id="emails-input2"></div>
+        </div>
+
+        <div class="actions">
+          <button onclick="emailsInput2.addEmails(getRandomEmail())">Add email</button>
+          <button onclick="alert('Valid emails: ' + emailsInput2.getCount())">Get emails count</button>
+        </div>
+      </div>
+
+      <h1>Form with custom validity pattern (<code>/.@miro.com/i</code>)</h1>
+      <div class="form">
+        <div class="form__input">
+          <h1>Share <b>Secret</b> with others</h1>
+          <div id="emails-input3"></div>
+        </div>
+
+        <div class="actions">
+          <button onclick="emailsInput3.addEmails(getRandomEmail())">Add email</button>
+          <button onclick="alert('Valid emails: ' + emailsInput3.getCount())">Get emails count</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="../dist/emails-input.min.js"></script>
+
+    <script>
+      var inputContainerNode = document.querySelector('#emails-input');
+      var emailsInput = new EmailsInput(inputContainerNode);
+
+      var inputContainerNode2 = document.querySelector('#emails-input2');
+      var options = {
+        emails: ['mtt.tttt@riddle.media', 'tzeeshanhasnain1@ezip.site'],
+      };
+      var emailsInput2 = new EmailsInput(inputContainerNode2, options);
+
+      var inputContainerNode3 = document.querySelector('#emails-input3');
+      var options = {
+        emails: ['mtt.tttt@riddle.media', 'tzeeshanhasnain1@ezip.site', 'andy@miro.com'],
+        validityPattern: /.@miro.com/i,
+      };
+      var emailsInput3 = new EmailsInput(inputContainerNode3, options);
+
+      function getRandomEmail() {
+        var someEmails = [
+          'john@gmail.com',
+          'andrew.k@mail.ru',
+          'tony9000@yahoo.com',
+          'ttk@example.com',
+          'vvalerjo148@loadingya.com',
+          'nsid@poolx.site'
+        ];
+        const getRandomIndex = Math.floor(Math.random() * (someEmails.length + 1));
+
+        return someEmails[getRandomIndex];
+      }
+    </script>
+  </body>
+</html>
