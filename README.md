@@ -1,5 +1,5 @@
 # Emails-input
-[Demo page]()
+[Demo page](https://colomolo.github.io/emails-input/demo/index.html)
 
 ## Usage
 Add `js` and `css` files from `dist` folder to you page:
