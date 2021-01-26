@@ -1,0 +1,85 @@
+.ei-field {
+  height: 98px;
+  padding: 8px 8px 4px;
+  background: #fff;
+  border: 1px solid #c3c2cf;
+  border-radius: 4px;
+  font-size: 0; /* remove spaces between child d:ib elements */
+  box-sizing: border-box;
+  overflow-y: auto;
+  cursor: text;
+
+  &:focus-within {
+    border-color: #4262ff;
+  }
+}
+
+.el-field_focused {
+  border-color: #4262ff;
+}
+
+.ei-input {
+  display: inline-block;
+  width: 170px;
+  height: 24px;
+  margin: 0 0 4px;
+  padding: 0;
+  font: normal 14px/24px 'Open Sans', sans-serif;
+  color: #050038;
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+
+  &::placeholder {
+    color: #c3c2cf;
+  }
+}
+
+.ei-email {
+  position: relative;
+  display: inline-block;
+  margin: 0 8px 4px 0;
+  color: #050038;
+  font: normal 14px/22px 'Open Sans', sans-serif;
+  box-sizing: border-box;
+}
+
+.ei-email_valid {
+  padding: 1px 24px 1px 10px;
+  background-color: rgba(102, 153, 255, 0.2);
+  border-radius: 12px;
+
+  & .ei-email__delete {
+    right: 8px;
+  }
+}
+
+.ei-email_invalid {
+  padding: 1px 16px 0 0;
+  border-bottom: 1px dashed #d92929;
+
+  & .ei-email__delete {
+    right: 0;
+  }
+}
+
+.ei-email__delete {
+  display: block;
+  position: absolute;
+  top: 2px;
+  width: 8px;
+  height: 20px;
+  fill: #050038;
+  border-radius: 10px;
+  cursor: pointer;
+
+  &:hover {
+    fill: #4262ff;
+  }
+}
+
+.ei-email__delete-icon {
+  width: 8px;
+  height: 8px;
+  margin: 6px 0;
+}
