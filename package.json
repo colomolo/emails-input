@@ -35,5 +35,9 @@
     "moduleNameMapper": {
       "remove.svg$": "<rootDir>/__mocks__/removeMock.js"
     }
-  }
+  },
+  "dependencies": {
+    "core-js": "3"
+  },
+  "browserslist": "> 0.25%, not dead"
 }
