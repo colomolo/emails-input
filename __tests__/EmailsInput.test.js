@@ -58,8 +58,4 @@ describe('EmailsInput', () => {
       expect(emailsInput.getCount()).toBe(1);
     });
   });
-
-  describe('', () => {
-
-  });
 });
